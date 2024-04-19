@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escorpião</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .fullscreen-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ajusta a imagem à página sem distorção */
+        }
+    </style>
+</head>
+<body>
+    <img src="scorpion_fullscreen.jpg" alt="Escorpião" class="fullscreen-img">
+    <script>
+        // Verificar se o usuário chegou a esta página após clicar em "Sim" na página anterior
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const confirmedScorpion = urlParams.get('confirmed');
+        if (!confirmedScorpion) {
+            // Redirecionar de volta à página inicial se não confirmado como escorpião
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
